@@ -4,12 +4,12 @@ var webpack = require('webpack');
 module.exports = {
     // 配置入口文件
     entry: {
-        app: ['./src/app.js']
+        app: './src/App.js'
     },
     // 配置输出路径
     output: {
         path: path.resolve(__dirname, './dist'),
-        publicPath: '/dist/',//指定资源引用目录
+        publicPath: '/dist/', //指定资源引用目录
         filename: '[name].js'
     },
     module: {
@@ -18,6 +18,16 @@ module.exports = {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/, //打包时过滤掉这个文件
                 use: ['babel-loader']
+            }, {
+                test: /\.(css|scss)$/,
+                exclude: /node_modules/, //打包时过滤掉这个文件
+                use: [
+                    {
+                        loader: "style-loader"
+                    }, {
+                        loader: "css-loader"
+                    }
+                ]
             }
         ]
     },
