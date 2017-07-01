@@ -1499,11 +1499,6 @@ button, input, select a, textarea {
     border: 0
 }
 
-body, html {
-    overflow: hidden;
-    height: 100%
-}
-
 ::-webkit-scrollbar {
     display: none
 }
